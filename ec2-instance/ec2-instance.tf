@@ -1,3 +1,4 @@
+# JS - this code will create an instances at the AWS cloud
 # Terraform Settings Block
 terraform {
   required_providers {
