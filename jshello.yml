@@ -1,6 +1,6 @@
 ---
 - hosts: all
   tasks:
-   - name: JS Hello World
+   - name: JS Hello World - I am from the Git
      debug: 
-      msg: "JS Hello World"
+      msg: "JS Hello World - I am from the Git"
