@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+   - name: JS Hello World
+     debug: 
+      msg: "JS Hello World"
