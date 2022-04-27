@@ -1,0 +1,14 @@
+- name: "To install Pkgs"
+  #hosts: mylabservers
+  hosts: all
+  become: true
+  tasks: 
+      - name: Remove apache httpd
+        apt:
+          name: apache2
+          state: absent
+
+      - name: Install apache httpd
+        apt:
+          name: apache2
+          state: present
