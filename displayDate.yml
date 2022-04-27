@@ -7,3 +7,9 @@
    - name: Display the current timestamp in YYYY-MM-DD
      debug:
       var=ansible_date_time.date
+      
+   - name: Display the hostname
+     shell: "hostname -i"
+     register: out
+
+   - debug: var=out.stdout_lines   
