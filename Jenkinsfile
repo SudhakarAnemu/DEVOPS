@@ -4,6 +4,7 @@ pipeline{
         stage("checkout stages"){
             steps{
                 echo"check code"
+                ls -lrt
             }
         }
         stage("build "){    
