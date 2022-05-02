@@ -1,53 +1,21 @@
 pipeline{
     agent any
     stages{
-        stage("checkout stages"){
+        stage("code checkout"){
             steps{
-                echo"check code"
+                script{
+                 sh " git clone https://github.com/harish11-dev/java-sample-app.git"
+                }
             }
         }
-        stage("build "){    
+        stage("count no.of files in repo"){
             steps{
-                echo"mvn clean install"
+                script{
+                    sh"""cd java-sample-app
+                        git ls-files | wc -l"""
+                }
             }
         }
-        
-        stage(" Test"){  
-            steps{
-                echo"mvn test"
-            }
-        }
-      
-        stage("sonarqube"){       
-            steps{
-                echo"check code"
-            }
-        }
-        stage("qulity gates"){       //.........sonargates
-            steps{
-                echo"check code"
-            }
-        }
-        stage("artifactes of code"){  //.........jfrog/nxeus
-            steps{
-                echo"check code"
-            }
-        }                             //........................................CI
-        stage("deploy dev"){          //.........tomcat/anisable
-            steps{
-                echo"check code"
-            }
-        }
-        stage("deploy uat"){          //.........tomcat/anisiable
-            steps{
-                echo"check code"
-            }
-        }
-        stage("deploy prod"){        //.........tomcat/anisible
-            steps{
-                echo"check code"
-            }
-        }                            //..........................................CD
         
     }
 }
